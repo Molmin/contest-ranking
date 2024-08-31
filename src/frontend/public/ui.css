@@ -1,0 +1,36 @@
+div.column {
+    position: fixed;
+    height: calc(100% - 15px);
+    overflow-y: auto;
+}
+
+div.column.column-config {
+    width: 300px;
+    left: 10px;
+}
+
+div.column.column-scoreboard {
+    width: calc(100% - 315px);
+    right: 10px;
+}
+
+p {
+    line-height: 12px;
+    font-size: 15px;
+}
+
+p.copyright {
+    font-size: 12px;
+    color: grey;
+    line-height: 8px;
+    text-align: center;
+}
+
+a {
+    color: #5f9fd6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

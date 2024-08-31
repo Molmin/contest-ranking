@@ -15,12 +15,22 @@ export class Context {
         return this.agent
             .get(new URL(url, this.endpoint).toString())
             .set('User-Agent', UA)
+            .accept('application/json')
             .retry(10)
     }
     post(url: string) {
         return this.agent
             .post(new URL(url, this.endpoint).toString())
             .set('User-Agent', UA)
+            .accept('application/json')
             .retry(10)
+    }
+
+    async loggedIn() {
+        const { body: { UserContext } } = await this.get(`/`)
+        return JSON.parse(UserContext)._id
+    }
+    async login(username: string, password: string) {
+        await this.post('/login').send({ uname: username, password })
     }
 }
